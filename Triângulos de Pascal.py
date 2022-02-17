@@ -25,4 +25,4 @@ for n in range(0, qtd_linhas + 1):
             linha.append(resutltado_formatado)
     triangulo.append(linha)
 for linha in triangulo:
-    print(linha)
+    print(*linha)
