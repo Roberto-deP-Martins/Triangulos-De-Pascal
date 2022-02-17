@@ -28,6 +28,7 @@ while continua:
         triangulo.append(linha)
     for linha in triangulo:
         print(*linha)
+    print('\n')
     resposta_continua = input("Quer gerar outro triângulo? (Sim/Não): ").lower()
     if resposta_continua == 'não' or resposta_continua == 'nao' or resposta_continua == 'n':
         continua = False
