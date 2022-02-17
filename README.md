@@ -1,1 +1,1 @@
-# Tri-ngulos-De-Pascal
+# Triangulos-De-Pascal
