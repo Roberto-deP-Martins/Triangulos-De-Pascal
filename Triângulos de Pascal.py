@@ -1,9 +1,22 @@
-from math import factorial as fatorial
+def fatorial(num, corte):  # Corte interrompe a sequência de mulitplicações, compensando não ter o maior fatorial do divisor presente na operação
+    valor = num
+    for i in range(num - 1, corte, -1):
+        valor = valor * i
+    return valor
+
 
 def combinacao(n, k):
-    numerador = fatorial(n)
-    divisor = (fatorial(k) * (fatorial(n - k)))
-    resultado = numerador // divisor
+    subtracao_divisor = n - k
+    # Remove-se maior fatorial do divisor da operação e interrompe-se o cálculo do fatorial do
+    # numerador nesse número, simulando o corte dos valores no cálculo feito a mão
+    if subtracao_divisor > k:
+        divisor = fatorial(k, 1)
+        numerador = fatorial(n, subtracao_divisor)
+        resultado = numerador // divisor
+    else:
+        divisor = fatorial(n - k, 1)
+        numerador = fatorial(n, k)
+        resultado = numerador // divisor
     return resultado
 
 
