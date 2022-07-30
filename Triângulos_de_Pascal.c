@@ -15,8 +15,14 @@ int main() {
     int qtd_linhas;
     while (continua)
     {
-        printf("Digite o número da linha em que deseja que o triângulo termine: ");
-        scanf("%ld", &qtd_linhas);
+        do {
+            printf("Digite o número da linha em que deseja que o triângulo termine: ");
+            scanf(" %ld", &qtd_linhas);
+            if (qtd_linhas > 29) {
+                printf("Insira um valor entre 1 e 29.\n");
+            }
+        } while (qtd_linhas > 29);
+
         unsigned long long resultado_formatado, tamanho_justificado;;
         int quantidade_digitos = qtd_digitos(qtd_linhas);
         for (int n = 0; n <= qtd_linhas; n++) {  // Para cada linha
